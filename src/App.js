@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     // Fetch the initial count from the server
     const fetchCounter = async () => {
-      const response = await axios.get("http://localhost:5000/api/counter");
+      const response = await axios.get("https://countsh.vercel.app/");
       setCount(response.data.count);
     };
     fetchCounter();
