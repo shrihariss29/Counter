@@ -15,19 +15,19 @@ function App() {
 
   const handleIncrement = async () => {
     const newCount = count + 1;
-    await axios.post("http://localhost:5000/api/counter", { count: newCount });
+    await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
   };
 
   const handleDecrement = async () => {
     const newCount = count - 1;
-    await axios.post("http://localhost:5000/api/counter", { count: newCount });
+    await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
   };
 
   const handleReset = async() => {
     const newCount = 0;
-    await axios.post("http://localhost:5000/api/counter", { count: newCount });
+    await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
   }
 
