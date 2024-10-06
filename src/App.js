@@ -5,31 +5,47 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Fetch the initial count from the server
-    const fetchCounter = async () => {
+  const fetchCounter = async () => {
+    try {
       const response = await axios.get("https://countsh.vercel.app/");
       setCount(response.data.count);
-    };
-    fetchCounter();
-  }, []);
+    } catch (error) {
+      console.error("Error fetching count:", error);
+    }
+  };
+  fetchCounter();
+}, []);
 
-  const handleIncrement = async () => {
+const handleIncrement = async () => {
+  try {
     const newCount = count + 1;
     await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
-  };
+  } catch (error) {
+    console.error("Error updating count:", error);
+  }
+};
 
-  const handleDecrement = async () => {
+const handleDecrement = async () => {
+  try {
     const newCount = count - 1;
     await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
-  };
+  } catch (error) {
+    console.error("Error updating count:", error);
+  }
+};
 
-  const handleReset = async() => {
+const handleReset = async () => {
+  try {
     const newCount = 0;
     await axios.post("https://countsh.vercel.app/", { count: newCount });
     setCount(newCount);
+  } catch (error) {
+    console.error("Error resetting count:", error);
   }
+};
+
 
   return (
     <div className="fulldisp">
