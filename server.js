@@ -41,7 +41,7 @@ const Counter = mongoose.model("Counter", counterSchema);
 })();
 
 // Route to get the current counter value
-app.get("/", async (req, res) => {
+app.get("https://countsh.vercel.app/", async (req, res) => {
   try {
     const counter = await Counter.findOne({});
     res.json(counter);
@@ -51,7 +51,7 @@ app.get("/", async (req, res) => {
 });
 
 // Route to update the counter value
-app.post("/", async (req, res) => {
+app.post("https://countsh.vercel.app/", async (req, res) => {
   const { count } = req.body;
   try {
     const updatedCounter = await Counter.findOneAndUpdate({}, { count }, { new: true });
