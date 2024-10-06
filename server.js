@@ -8,7 +8,9 @@ const PORT = process.env.PORT || 5000;
 // Replace with your MongoDB connection string
 const CONNECTION_STRING = "mongodb+srv://shrihariss29:8BDeFKpxGecP1vlc@todo.auqt1.mongodb.net/?retryWrites=true&w=majority&appName=Todo";
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://countsh.vercel.app/'
+}));
 app.use(express.json());
 
 // Connect to MongoDB
