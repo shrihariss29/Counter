@@ -41,7 +41,8 @@ const Counter = mongoose.model("Counter", counterSchema);
 })();
 
 // Route to get the current counter value
-app.get("https://countsh.vercel.app/", async (req, res) => {
+// Route to get the current counter value
+app.get("/", async (req, res) => {
   try {
     const counter = await Counter.findOne({});
     res.json(counter);
@@ -51,7 +52,7 @@ app.get("https://countsh.vercel.app/", async (req, res) => {
 });
 
 // Route to update the counter value
-app.post("https://countsh.vercel.app/", async (req, res) => {
+app.post("/", async (req, res) => {
   const { count } = req.body;
   try {
     const updatedCounter = await Counter.findOneAndUpdate({}, { count }, { new: true });
@@ -60,6 +61,7 @@ app.post("https://countsh.vercel.app/", async (req, res) => {
     res.status(500).json({ error: "Error updating counter" });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
