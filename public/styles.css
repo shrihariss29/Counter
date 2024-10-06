@@ -1,0 +1,39 @@
+body
+{
+    background-color: #dddd;
+}
+button
+{
+    padding: 1vh;
+    color: red;
+    font-weight: 900;
+    width: 17vh;
+}
+.text
+{
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8vh;
+}
+.btn-danger
+{
+    margin-left: 1vh;
+}
+.buttonflex
+{
+    display: inline;
+}
+.fulldisp
+{
+    text-align: center;
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-primary
+{
+    margin-top: 1vh;
+    width: 35vh;
+}
